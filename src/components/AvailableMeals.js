@@ -1,4 +1,5 @@
 import Card from './Card';
+import MealItem from './MealItem';
 
 const DUMMY_MEALS = [
     {
@@ -31,7 +32,16 @@ const AvailableMeals = () => {
     return (
         <section className="meals">
             <Card>
-                <ul></ul>
+                <ul>
+                  {DUMMY_MEALS.map(meal => (
+                    <MealItem
+                        key = {meal.id}
+                        id= {meal.id}
+                        name= {meal.name}
+                        description= {meal.description}
+                        price= {meal.price}/> 
+                  ))}
+                </ul>
             </Card>
         </section>
     );
